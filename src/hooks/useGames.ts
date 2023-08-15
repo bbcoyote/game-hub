@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 // this interface is defining our Platform props to render playstation, xbox, etc
 export interface Platform {
@@ -17,6 +18,9 @@ export interface Game {
 }
 
 // this is a custom hook we are using to manage our state, fetch and handle API requests for games data, errors and loading states
-const useGames = () => useData<Game>("/games");
+const useGames = (selectedGenre: Genre | null) =>
+  useData<Game>("/games", { params: { genres: selectedGenre?.id } }, [
+    selectedGenre?.id,
+  ]);
 
 export default useGames;
