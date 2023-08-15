@@ -8,7 +8,7 @@ interface Props {
 // this is a container by default renders a div. this container is like a box that holds our card elements.
 const GameCardContainer = ({ children }: Props) => {
   return (
-    <Box width="300px" borderRadius={10} overflow="hidden">
+    <Box borderRadius={10} overflow="hidden">
       {children}
     </Box>
   );
