@@ -15,6 +15,7 @@ export interface Game {
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
+  rating_top: number;
 }
 
 // this is a custom hook we are using to manage our state, fetch and handle API requests for games data, errors and loading states
